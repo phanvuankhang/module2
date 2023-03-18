@@ -52,11 +52,9 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "Mã='" + id + '\'' +
-                ", Tên='" + name + '\'' +
-                ", Ngày sinh=" + birthDay +
-                ", Giới tính='" + gender + '\'' +
-                '}';
+        return "Mã: " + id  +
+                ", Tên: " + name +
+                ", Ngày sinh: " + birthDay +
+                ", Giới tính: " + gender;
     }
 }

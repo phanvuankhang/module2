@@ -1,11 +1,13 @@
 package ss10_java_collection_framework.mvc.controller;
+
 import ss10_java_collection_framework.mvc.service.StudentService;
 import ss10_java_collection_framework.mvc.service.TeacherService;
 
 import java.util.Scanner;
 
 public class MainMenu {
-    public static Scanner scanner=new Scanner(System.in);
+    public static Scanner scanner = new Scanner(System.in);
+
     public static void displayMenu() {
         StudentService studentService = new StudentService();
         TeacherService teacherService = new TeacherService();
@@ -66,6 +68,6 @@ public class MainMenu {
                 default:
                     System.out.println("Bạn đã chọn sai. Mời bạn chọn lại. ");
             }
-        }while (flag);
+        } while (flag);
     }
 }

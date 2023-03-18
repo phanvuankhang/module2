@@ -3,11 +3,12 @@ package ss10_java_collection_framework.mvc.model;
 public class Teacher extends Person {
     private String specialize;
 
-    public Teacher(int id, String name, String birthDay, String gender, String specialize) {
+    public Teacher() {
     }
 
-    public Teacher(int id, String name, String birthDay, String gender) {
+    public Teacher(int id, String name, String birthDay, String gender, String specialize) {
         super(id, name, birthDay, gender);
+        this.specialize = specialize;
     }
 
     public String getSpecialize() {
@@ -20,9 +21,7 @@ public class Teacher extends Person {
 
     @Override
     public String toString() {
-        return "Teacher{" +
-                super.toString() +
-                "Chuyên môn='" + specialize + '\'' +
-                '}';
+        return super.toString() +
+                ", Chuyên môn: " + specialize;
     }
 }
