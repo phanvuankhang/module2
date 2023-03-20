@@ -1,4 +1,4 @@
-package ss10_java_collection_framework.mvc.service;
+package ss10_java_list.mvc.service;
 
 public interface IStudentService {
     void addStudent();

@@ -1,6 +1,6 @@
-package ss10_java_collection_framework.mvc.service;
+package ss10_java_list.mvc.service;
 
-import ss10_java_collection_framework.mvc.model.Teacher;
+import ss10_java_list.mvc.model.Teacher;
 
 import java.util.ArrayList;
 import java.util.Scanner;

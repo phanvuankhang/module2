@@ -1,6 +1,4 @@
-package ss10_java_collection_framework.mvc.model;
-
-import java.util.Date;
+package ss10_java_list.mvc.model;
 
 public class Person {
     private int id;

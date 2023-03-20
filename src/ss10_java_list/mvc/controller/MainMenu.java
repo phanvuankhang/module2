@@ -1,7 +1,7 @@
-package ss10_java_collection_framework.mvc.controller;
+package ss10_java_list.mvc.controller;
 
-import ss10_java_collection_framework.mvc.service.StudentService;
-import ss10_java_collection_framework.mvc.service.TeacherService;
+import ss10_java_list.mvc.service.StudentService;
+import ss10_java_list.mvc.service.TeacherService;
 
 import java.util.Scanner;
 

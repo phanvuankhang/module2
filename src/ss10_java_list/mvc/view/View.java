@@ -1,6 +1,6 @@
-package ss10_java_collection_framework.mvc.view;
+package ss10_java_list.mvc.view;
 
-import ss10_java_collection_framework.mvc.controller.MainMenu;
+import ss10_java_list.mvc.controller.MainMenu;
 
 public class View extends MainMenu {
     public static void main(String[] args) {

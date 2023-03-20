@@ -1,4 +1,4 @@
-package ss10_java_collection_framework.implement_method_array_list;
+package ss10_java_list.implement_method_array_list;
 
 import java.util.Arrays;
 

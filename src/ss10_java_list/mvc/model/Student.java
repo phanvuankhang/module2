@@ -1,4 +1,4 @@
-package ss10_java_collection_framework.mvc.model;
+package ss10_java_list.mvc.model;
 
 public class Student extends Person {
     private String classes;
