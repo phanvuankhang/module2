@@ -12,13 +12,11 @@ public class Main {
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line;
+            Country country=null;
             String[] nation;
             while ((line = bufferedReader.readLine()) != null) {
                 nation = line.split(",");
-                Country country = new Country();
-                country.setId(Integer.parseInt(nation[0]));
-                country.setCode(nation[1]);
-                country.setName(nation[2]);
+                country = new Country(Integer.parseInt(nation[0]),nation[1],nation[2]);
                 System.out.println(country);
             }
             bufferedReader.close();
