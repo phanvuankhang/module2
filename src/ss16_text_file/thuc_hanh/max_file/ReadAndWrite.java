@@ -17,7 +17,6 @@ public class ReadAndWrite {
             while ((line = bufferedReader.readLine()) != null){
                 numbers.add(Integer.parseInt(line));
             }
-            fileReader.close();
             bufferedReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("Fie không tồn tại hoặc nội dung có lỗi!");
@@ -34,7 +33,6 @@ public class ReadAndWrite {
             fileWriter = new FileWriter(file,true);
             bufferedWriter=new BufferedWriter(fileWriter);
             bufferedWriter.write("Giá trị lớn nhất là: "+max);
-            fileWriter.close();
             bufferedWriter.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
