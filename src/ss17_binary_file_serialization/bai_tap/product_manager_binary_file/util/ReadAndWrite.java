@@ -15,7 +15,6 @@ public class ReadAndWrite {
             fileOutputStream = new FileOutputStream(file);
             objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(productList);
-            fileOutputStream.close();
             objectOutputStream.close();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -33,7 +32,6 @@ public class ReadAndWrite {
             fileInputStream = new FileInputStream(file);
             objectInputStream = new ObjectInputStream(fileInputStream);
             productList = (List<Product>) objectInputStream.readObject();
-            fileInputStream.close();
             objectInputStream.close();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
