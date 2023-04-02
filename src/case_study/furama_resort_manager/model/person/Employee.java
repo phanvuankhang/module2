@@ -6,7 +6,7 @@ public class Employee extends Person {
     private String location;
     private float wage;
 
-    public Employee(String employeeId, String name, String birthDay, String gender, int personId, int phoneNumber, String email, String level, String location, float wage) {
+    public Employee() {
     }
 
     public Employee(String employeeId, String name, String birthDay, String gender, String personId, String phoneNumber, String email, String level, String location, float wage) {
@@ -63,5 +63,9 @@ public class Employee extends Person {
                 ", location='" + location + '\'' +
                 ", wage=" + wage +
                 '}';
+    }
+
+    public String getInfoToEmployee() {
+        return employeeId + "," + name + "," + birthDay + "," + gender + "," + personId + "," + phoneNumber + "," + email + "," + level + "," + location + "," + wage;
     }
 }

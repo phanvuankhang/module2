@@ -37,7 +37,7 @@ public class FuramaController {
                     flag = false;
                     break;
                 default:
-                    System.out.println("Bạn đã nhập sai. Mời bạn nhập lại.");
+                    System.out.println("Wrong format. Enter again!");
             }
         } while (flag);
     }

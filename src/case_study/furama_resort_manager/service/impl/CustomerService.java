@@ -73,7 +73,41 @@ public class CustomerService implements ICustomerService {
                                 break;
                             case 7:
                                 System.out.println("Enter type of guest: ");
-                                typeGuest = scanner.nextLine();
+                                boolean flag1=true;
+                                typeGuest ="";
+                                do {
+                                    System.out.println("Type of guest:\n" +
+                                            "1.\tDiamond\n" +
+                                            "2.\tPlatinium\n" +
+                                            "3.\tGold\n" +
+                                            "4.\tSilver\n" +
+                                            "5.\tMember\n" );
+                                    int choice1=Integer.parseInt(scanner.nextLine());
+                                    switch (choice1){
+                                        case 1:
+                                            typeGuest="Diamond";
+                                            flag1=false;
+                                            break;
+                                        case 2:
+                                            typeGuest="Platinium";
+                                            flag1=false;
+                                            break;
+                                        case 3:
+                                            typeGuest="Gold";
+                                            flag1=false;
+                                            break;
+                                        case 4:
+                                            typeGuest="Silver";
+                                            flag1=false;
+                                            break;
+                                        case 5:
+                                            typeGuest="Member";
+                                            flag1=false;
+                                            break;
+                                        default:
+                                            System.out.println("Wrong format. Enter again!");
+                                    }
+                                }while (flag1);
                                 customerList.get(i).setTypeGuest(typeGuest);
                                 break;
                             case 8:
@@ -107,10 +141,13 @@ public class CustomerService implements ICustomerService {
     public void add() {
         System.out.println("enter employee code: ");
         String customerId = scanner.nextLine();
+        int count=0;
         for (int i = 0; i < customerList.size(); i++) {
             if (customerList.get(i).getcustomerId().equals(customerId)) {
                 System.out.println("Employee already exist!");
                 return;
+            }else {
+                count++;
             }
         }
         System.out.println("Enter your first and last name: ");
@@ -126,7 +163,41 @@ public class CustomerService implements ICustomerService {
         System.out.println("Enter email: ");
         String email = scanner.nextLine();
         System.out.println("Enter type of guest: ");
-        String typeGuest = scanner.nextLine();
+        boolean flag=true;
+        String typeGuest ="";
+        do {
+            System.out.println("Type of guest:\n" +
+                    "1.\tDiamond\n" +
+                    "2.\tPlatinium\n" +
+                    "3.\tGold\n" +
+                    "4.\tSilver\n" +
+                    "5.\tMember\n" );
+            int choice=Integer.parseInt(scanner.nextLine());
+            switch (choice){
+                case 1:
+                    typeGuest="Diamond";
+                    flag=false;
+                    break;
+                case 2:
+                    typeGuest="Platinium";
+                    flag=false;
+                    break;
+                case 3:
+                    typeGuest="Gold";
+                    flag=false;
+                    break;
+                case 4:
+                    typeGuest="Silver";
+                    flag=false;
+                    break;
+                case 5:
+                    typeGuest="Member";
+                    flag=false;
+                    break;
+                default:
+                    System.out.println("Wrong format. Enter again!");
+            }
+        }while (flag);
         System.out.println("Enter address: ");
         String address = scanner.nextLine();
         Customer customer = new Customer(customerId, name, birthDay, gender, personId, phoneNumber, email, typeGuest, address);
