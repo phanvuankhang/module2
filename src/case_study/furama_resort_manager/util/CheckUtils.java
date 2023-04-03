@@ -15,7 +15,7 @@ public class CheckUtils {
     }
 
     public static boolean checkNameService(String str) {
-        String regex = "^([A-Z][a-z]+)+([a-z]+\\s)+([a-z]+)$";
+        String regex = "^[A-Z][a-z]*$";
         return str.matches(regex);
     }
 
@@ -35,7 +35,7 @@ public class CheckUtils {
       return num>=0;
     }
     public static boolean checkDate(String str){
-        String regex="^(([0-2][0-9])||3[0-1])\\/(([0][0-9])||1[0-2])\\/((19((2[4-9])||([3-9][0-9])))||200[0-5])$";
+        String regex="^((0[1-9])||([1-2][0-9])||3[0-1])\\/((0[0-9])||1[0-2])\\/(19((2[4-9])||([3-9][0-9]))||(200[0-5]))$";
         return str.matches(regex);
     }
 }

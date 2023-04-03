@@ -3,7 +3,6 @@ package case_study.furama_resort_manager.service.impl;
 import case_study.furama_resort_manager.model.facility.House;
 import case_study.furama_resort_manager.service.IHouseService;
 import case_study.furama_resort_manager.util.CheckUtils;
-import case_study.furama_resort_manager.util.FormatException;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

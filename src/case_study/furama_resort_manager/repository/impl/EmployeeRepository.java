@@ -42,7 +42,7 @@ public class EmployeeRepository implements IEmployeeRepository {
         List<String> stringList = ReadAndWrite.readFile(PATH_FILE);
         stringList.add(employee.getInfoToEmployee());
         for (int i = 0; i < stringList.size(); i++) {
-            ReadAndWrite.writeFile(PATH_FILE, stringList.get(i), true);
+
         }
     }
 }

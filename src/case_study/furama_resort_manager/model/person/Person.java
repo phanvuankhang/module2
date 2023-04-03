@@ -2,7 +2,7 @@ package case_study.furama_resort_manager.model.person;
 
 import jdk.nashorn.internal.runtime.StoredScript;
 
-public class Person {
+public abstract class Person {
      String name;
      String birthDay;
      String gender;

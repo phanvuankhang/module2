@@ -1,6 +1,6 @@
 package case_study.furama_resort_manager.model.facility;
 
-public class Facility {
+public abstract class Facility {
     String codeService;
     float usableArea;
     float rentalCosts;

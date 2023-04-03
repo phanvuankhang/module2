@@ -2,10 +2,8 @@ package case_study.furama_resort_manager.service.impl;
 import case_study.furama_resort_manager.model.facility.Room;
 import case_study.furama_resort_manager.service.IRoomService;
 import case_study.furama_resort_manager.util.CheckUtils;
-import case_study.furama_resort_manager.util.FormatException;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
