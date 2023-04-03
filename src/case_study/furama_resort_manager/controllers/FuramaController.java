@@ -8,8 +8,8 @@ public class FuramaController {
     public static void displayMainMenu() {
         boolean flag = true;
         do {
-            System.out.println("--KHU NGHỈ DƯỠNG FURAMA--\n" +
-                    "Chọn chức năng theo số (để tiếp tục):\n" +
+            System.out.println("----------FURAMA RESORT----------\n" +
+                    "Select function by number (to continue):\n" +
                     "1.\tEmployee Management\n" +
                     "2.\tCustomer Management\n" +
                     "3.\tFacility Management \n" +

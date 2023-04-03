@@ -3,6 +3,7 @@ package case_study.furama_resort_manager.service.impl;
 import case_study.furama_resort_manager.model.person.Customer;
 import case_study.furama_resort_manager.model.person.Employee;
 import case_study.furama_resort_manager.service.ICustomerService;
+import case_study.furama_resort_manager.util.CheckUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -152,8 +153,11 @@ public class CustomerService implements ICustomerService {
         }
         System.out.println("Enter your first and last name: ");
         String name = scanner.nextLine();
-        System.out.println("Enter date of birth: ");
-        String birthDay = scanner.nextLine();
+        String birthDay;
+        do {
+            System.out.println("Enter date of birth: ");
+            birthDay = scanner.nextLine();
+        }while (!CheckUtils.checkDate(birthDay));
         System.out.println("Enter gender: ");
         String gender = scanner.nextLine();
         System.out.println("Enter ID number: ");

@@ -11,7 +11,8 @@ public class FacilityController {
     public static void displayFacility(){
         boolean flag=true;
         do {
-            System.out.println("1\tDisplay list facility\n" +
+            System.out.println("----------FACILITY----------\n" +
+                    "1\tDisplay list facility\n" +
                     "2\tAdd new facility\n" +
                     "3\tDisplay list facility maintenance\n" +
                     "4\tReturn main menu\n");

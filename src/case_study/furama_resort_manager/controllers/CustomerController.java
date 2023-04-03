@@ -11,7 +11,8 @@ public class CustomerController {
     public static void displayCustomer(){
         boolean flag=true;
         do {
-            System.out.println("1.\tDisplay list customers\n" +
+            System.out.println("----------CUSTOMER----------\n" +
+                    "1.\tDisplay list customers\n" +
                     "2.\tAdd new customer\n" +
                     "3.\tEdit customer\n" +
                     "4.\tReturn main menu\n");

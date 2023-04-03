@@ -7,7 +7,8 @@ public class BookingController {
     public static void displayBooking(){
         boolean flag=true;
         do {
-            System.out.println("1.\tAdd new booking\n" +
+            System.out.println("----------BOOKING----------\n" +
+                    "1.\tAdd new booking\n" +
                     "2.\tDisplay list booking\n" +
                     "3.\tCreate new contract\n" +
                     "4.\tDisplay list contracts\n" +

@@ -13,7 +13,8 @@ public class EmployeeController {
         IEmployeeService employeeService = new EmployeeService();
         boolean flag = true;
         do {
-            System.out.println("1\tDisplay list employees\n" +
+            System.out.println("----------EMPLOYEE----------\n" +
+                    "1\tDisplay list employees\n" +
                     "2\tAdd new employee\n" +
                     "3\tEdit employee\n" +
                     "4\tReturn main menu\n");

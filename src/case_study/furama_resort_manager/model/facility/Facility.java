@@ -1,7 +1,7 @@
 package case_study.furama_resort_manager.model.facility;
 
 public class Facility {
-    String nameService;
+    String codeService;
     float usableArea;
     float rentalCosts;
     int peopleMaximum;
@@ -10,20 +10,20 @@ public class Facility {
     public Facility() {
     }
 
-    public Facility(String nameService, float usableArea, float rentalCosts, int peopleMaximum, String rentalType) {
-        this.nameService = nameService;
+    public Facility(String codeService, float usableArea, float rentalCosts, int peopleMaximum, String rentalType) {
+        this.codeService = codeService;
         this.usableArea = usableArea;
         this.rentalCosts = rentalCosts;
         this.peopleMaximum = peopleMaximum;
         this.rentalType = rentalType;
     }
 
-    public String getNameService() {
-        return nameService;
+    public String getCodeService() {
+        return codeService;
     }
 
-    public void setNameService(String nameService) {
-        this.nameService = nameService;
+    public void setCodeService(String codeService) {
+        this.codeService = codeService;
     }
 
     public float getUsableArea() {
@@ -61,7 +61,7 @@ public class Facility {
     @Override
     public String toString() {
         return "Facility{" +
-                "nameService='" + nameService + '\'' +
+                "codeService='" + codeService + '\'' +
                 ", usableArea=" + usableArea +
                 ", rentalCosts=" + rentalCosts +
                 ", peopleMaximum=" + peopleMaximum +

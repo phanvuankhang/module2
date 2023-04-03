@@ -1,8 +1,10 @@
 package case_study.furama_resort_manager.service.impl;
 
 import case_study.furama_resort_manager.model.person.Employee;
+import case_study.furama_resort_manager.repository.IEmployeeRepository;
+import case_study.furama_resort_manager.repository.impl.EmployeeRepository;
 import case_study.furama_resort_manager.service.IEmployeeService;
-import case_study.furama_resort_manager.util.ReadAndWriteEmployee;
+import case_study.furama_resort_manager.util.CheckUtils;
 
 import java.util.ArrayList;
 
@@ -12,9 +14,12 @@ import java.util.Scanner;
 public class EmployeeService extends Employee implements IEmployeeService {
     static Scanner scanner = new Scanner(System.in);
     static List<Employee> employeeList = new ArrayList<>();
+    private IEmployeeRepository employeeRepository=new EmployeeRepository();
+
 
     @Override
     public void display() {
+       employeeList=employeeRepository.display();
         for (Employee e : employeeList) {
             System.out.println(e);
         }
@@ -35,8 +40,11 @@ public class EmployeeService extends Employee implements IEmployeeService {
         }
         System.out.println("Enter your first and last name: ");
         String name = scanner.nextLine();
-        System.out.println("Enter date of birth: ");
-        String birthDay = scanner.nextLine();
+        String birthDay;
+        do {
+            System.out.println("Enter date of birth: ");
+            birthDay = scanner.nextLine();
+        }while (!CheckUtils.checkDate(birthDay));
         System.out.println("Enter gender: ");
         String gender = scanner.nextLine();
         System.out.println("Enter ID number: ");
@@ -121,6 +129,7 @@ public class EmployeeService extends Employee implements IEmployeeService {
         float wage = Float.parseFloat(scanner.nextLine());
         Employee employee = new Employee(employeeId, name, birthDay, gender, personId, phoneNumber, email, level, location, wage);
         employeeList.add(employee);
+        employeeRepository.add(employee);
         System.out.println("Successfully added new.");
     }
 
@@ -276,7 +285,9 @@ public class EmployeeService extends Employee implements IEmployeeService {
                         }
                     } while (flag);
                     Employee employee = new Employee(name, birthDay, gender, gender, personId, phoneNumber, email, level, location, wage);
-                    System.out.println(employee);
+                    employeeList.add(employee);
+                    employeeRepository.add(employee);
+                    System.out.println("successful fix");
                 }
             }
         }

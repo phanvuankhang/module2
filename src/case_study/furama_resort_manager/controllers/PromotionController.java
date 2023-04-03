@@ -7,7 +7,8 @@ public class PromotionController {
     public static void displayPromotion(){
         boolean flag=true;
         do {
-            System.out.println("1.\tDisplay list customers use service\n" +
+            System.out.println("----------PROMOTION-----------\n" +
+                    "1.\tDisplay list customers use service\n" +
                     "2.\tDisplay list customers get voucher\n" +
                     "3.\tReturn main menu\n");
             int choice=Integer.parseInt(scanner.nextLine());

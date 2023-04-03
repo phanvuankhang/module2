@@ -6,8 +6,8 @@ public class Room extends Facility {
     public Room() {
     }
 
-    public Room(String nameService, float usableArea, float rentalCosts, int peopleMaximum, String rentalType, String freeService) {
-        super(nameService, usableArea, rentalCosts, peopleMaximum, rentalType);
+    public Room(String codeService, float usableArea, float rentalCosts, int peopleMaximum, String rentalType, String freeService) {
+        super(codeService, usableArea, rentalCosts, peopleMaximum, rentalType);
         this.freeService = freeService;
     }
 
@@ -22,7 +22,7 @@ public class Room extends Facility {
     @Override
     public String toString() {
         return "Room{" +
-                ", nameService='" + nameService + '\'' +
+                ", nameService='" + codeService + '\'' +
                 ", usableArea=" + usableArea +
                 ", rentalCosts=" + rentalCosts +
                 ", peopleMaximum=" + peopleMaximum +

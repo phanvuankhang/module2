@@ -8,8 +8,8 @@ public class Villa extends Facility {
     public Villa() {
     }
 
-    public Villa(String nameService, float usableArea, float rentalCosts, int peopleMaximum, String rentalType, String roomStandard, float poolArea, int floorsNumber) {
-        super(nameService, usableArea, rentalCosts, peopleMaximum, rentalType);
+    public Villa(String codeService, float usableArea, float rentalCosts, int peopleMaximum, String rentalType, String roomStandard, float poolArea, int floorsNumber) {
+        super(codeService, usableArea, rentalCosts, peopleMaximum, rentalType);
         this.roomStandard = roomStandard;
         this.poolArea = poolArea;
         this.floorsNumber = floorsNumber;
@@ -42,7 +42,7 @@ public class Villa extends Facility {
     @Override
     public String toString() {
         return "Villa{" +
-                ", nameService='" + nameService + '\'' +
+                ", nameService='" + codeService + '\'' +
                 ", usableArea=" + usableArea +
                 ", rentalCosts=" + rentalCosts +
                 ", peopleMaximum=" + peopleMaximum +
