@@ -34,18 +34,18 @@ public class FacilityService implements IFacilityService {
                 "2.\tAdd New House\n" +
                 "3.\tAdd New Room\n" +
                 "4.\tBack to menu\n");
-        int choice=Integer.parseInt(scanner.nextLine());
+        String choice=scanner.nextLine();
             switch (choice) {
-                case 1:
+                case "1":
                     villaService.add();
                     break;
-                case 2:
+                case "2":
                     houseService.add();
                     break;
-                case 3:
+                case "3":
                     roomService.add();
                     break;
-                case 4:
+                case "4":
                     flag=false;
                     break;
                 default:

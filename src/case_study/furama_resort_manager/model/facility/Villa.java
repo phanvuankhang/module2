@@ -47,9 +47,13 @@ public class Villa extends Facility {
                 ", rentalCosts=" + rentalCosts +
                 ", peopleMaximum=" + peopleMaximum +
                 ", rentalType='" + rentalType + '\'' +
-                "roomStandard='" + roomStandard + '\'' +
+                ", roomStandard='" + roomStandard + '\'' +
                 ", poolArea=" + poolArea +
                 ", floorsNumber=" + floorsNumber +
                 '}';
+    }
+
+    public String getInfoToVilla() {
+        return codeService + "," + usableArea + "," + rentalCosts + "," + peopleMaximum + "," + rentalType + "," + roomStandard + "," + poolArea + "," + floorsNumber;
     }
 }

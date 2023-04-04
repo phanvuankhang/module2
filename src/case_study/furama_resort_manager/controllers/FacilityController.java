@@ -16,18 +16,18 @@ public class FacilityController {
                     "2\tAdd new facility\n" +
                     "3\tDisplay list facility maintenance\n" +
                     "4\tReturn main menu\n");
-            int choice=Integer.parseInt(scanner.nextLine());
+            String choice=scanner.nextLine();
             switch (choice){
-                case 1:
+                case "1":
                     facilityService.display();
                     break;
-                case 2:
+                case "2":
                     facilityService.add();
                     break;
-                case 3:
+                case "3":
                     facilityService.displayMaintenance();
                     break;
-                case 4:
+                case "4":
                     flag=false;
                     break;
                 default:

@@ -16,24 +16,24 @@ public class FuramaController {
                     "4.\tBooking Management\n" +
                     "5.\tPromotion Management\n" +
                     "6.\tExit\n");
-            int choice = Integer.parseInt(scanner.nextLine());
+            String choice =scanner.nextLine();
             switch (choice) {
-                case 1:
+                case "1":
                     EmployeeController.displayEmployee();
                     break;
-                case 2:
+                case "2":
                     CustomerController.displayCustomer();
                     break;
-                case 3:
+                case "3":
                     FacilityController.displayFacility();
                     break;
-                case 4:
+                case "4":
                     BookingController.displayBooking();
                     break;
-                case 5:
+                case "5":
                     PromotionController.displayPromotion();
                     break;
-                case 6:
+                case "6":
                     flag = false;
                     break;
                 default:

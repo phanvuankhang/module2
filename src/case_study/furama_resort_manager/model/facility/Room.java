@@ -30,4 +30,8 @@ public class Room extends Facility {
                 "freeService='" + freeService + '\'' +
                 '}';
     }
+
+    public String getInfoToRoom() {
+        return codeService + "," + usableArea + "," + rentalCosts + "," + peopleMaximum + "," + rentalType + "," + freeService;
+    }
 }

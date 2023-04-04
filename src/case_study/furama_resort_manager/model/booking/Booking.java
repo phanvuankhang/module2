@@ -79,4 +79,8 @@ public class Booking {
                 ", typeService='" + typeService + '\'' +
                 '}';
     }
+
+    public String getInfoToBooking() {
+        return bookingCode + "," + startDay + "," + endDay + "," + customerId + "," + nameService + "," + typeService;
+    }
 }

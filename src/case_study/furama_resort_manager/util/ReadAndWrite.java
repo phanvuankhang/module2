@@ -17,6 +17,7 @@ public class ReadAndWrite {
                 stringList.add(line);
             }
             bufferedReader.close();
+            fileReader.close();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
@@ -34,6 +35,7 @@ public class ReadAndWrite {
             bufferedWriter.write(line);
             bufferedWriter.newLine();
             bufferedWriter.close();
+            fileWriter.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

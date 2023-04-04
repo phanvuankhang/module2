@@ -41,4 +41,8 @@ public class House extends Facility {
                 ", floorsNumber=" + floorsNumber +
                 '}';
     }
+
+    public String getInfoToHouse() {
+        return codeService + "," + usableArea + "," + rentalCosts + "," + peopleMaximum + "," + rentalType + "," + roomStandard + "," + floorsNumber;
+    }
 }

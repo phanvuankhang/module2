@@ -7,8 +7,10 @@ import case_study.furama_resort_manager.util.ReadAndWrite;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class EmployeeRepository implements IEmployeeRepository {
+    static Scanner scanner = new Scanner(System.in);
     private static final String PATH_FILE = "src\\case_study\\furama_resort_manager\\data\\employee_data.csv";
 
     @Override
@@ -39,10 +41,10 @@ public class EmployeeRepository implements IEmployeeRepository {
 
     @Override
     public void edit(Employee employee) {
-        List<String> stringList = ReadAndWrite.readFile(PATH_FILE);
-        stringList.add(employee.getInfoToEmployee());
-        for (int i = 0; i < stringList.size(); i++) {
-
-        }
     }
+
 }
+
+
+
+

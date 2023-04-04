@@ -18,18 +18,18 @@ public class EmployeeController {
                     "2\tAdd new employee\n" +
                     "3\tEdit employee\n" +
                     "4\tReturn main menu\n");
-            int choice = Integer.parseInt(scanner.nextLine());
+            String choice =scanner.nextLine();
             switch (choice) {
-                case 1:
+                case "1":
                     employeeService.display();
                     break;
-                case 2:
+                case "2":
                     employeeService.add();
                     break;
-                case 3:
+                case "3":
                     employeeService.edit();
                     break;
-                case 4:
+                case "4":
                     flag = false;
                     break;
                 default:

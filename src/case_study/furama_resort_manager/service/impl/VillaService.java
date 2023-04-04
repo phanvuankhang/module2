@@ -2,20 +2,26 @@ package case_study.furama_resort_manager.service.impl;
 
 
 import case_study.furama_resort_manager.model.facility.Villa;
+import case_study.furama_resort_manager.repository.IVillaRepository;
+import case_study.furama_resort_manager.repository.impl.VillaRepository;
 import case_study.furama_resort_manager.service.IVillaService;
 import case_study.furama_resort_manager.util.CheckUtils;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 public class VillaService implements IVillaService {
-    static Scanner scanner=new Scanner(System.in);
-    static Map<Villa,Integer> villaIntegerMap=new HashMap<>();
+    static Scanner scanner = new Scanner(System.in);
+    static Map<Villa, Integer> villaIntegerMap = new LinkedHashMap<>();
+    static IVillaRepository villaRepository = new VillaRepository();
+
     @Override
     public void display() {
+        villaIntegerMap = villaRepository.display();
         for (Villa v : villaIntegerMap.keySet()) {
-            System.out.println(v);
+            System.out.println(v + "value: " + villaIntegerMap.get(v));
         }
     }
 
@@ -36,43 +42,44 @@ public class VillaService implements IVillaService {
         do {
             System.out.println("Enter the usable area");
             usableArea = Float.parseFloat(scanner.nextLine());
-        }while (!CheckUtils.checkArea(usableArea));
+        } while (!CheckUtils.checkArea(usableArea));
         do {
-        System.out.println("Enter rental cost");
-        rentalCosts = Float.parseFloat(scanner.nextLine());
-        }while (!CheckUtils.checkRentalCost(rentalCosts));
+            System.out.println("Enter rental cost");
+            rentalCosts = Float.parseFloat(scanner.nextLine());
+        } while (!CheckUtils.checkRentalCost(rentalCosts));
         do {
             System.out.println("Enter the maximum number of people");
             peopleMaximum = Integer.parseInt(scanner.nextLine());
-        }while (!CheckUtils.checkPeopleMaximum(peopleMaximum));
+        } while (!CheckUtils.checkPeopleMaximum(peopleMaximum));
         do {
             System.out.println("Enter rental type");
             rentalType = scanner.nextLine();
-        }while (!CheckUtils.checkNameService(rentalType));
+        } while (!CheckUtils.checkNameService(rentalType));
         do {
             System.out.println("Enter room standard");
             roomStandard = scanner.nextLine();
-        }while (!CheckUtils.checkNameService(roomStandard));
+        } while (!CheckUtils.checkNameService(roomStandard));
         do {
             System.out.println("Enter the pool area");
             poolArea = Float.parseFloat(scanner.nextLine());
-        }while (!CheckUtils.checkArea(poolArea));
+        } while (!CheckUtils.checkArea(poolArea));
         do {
             System.out.println("Enter the number of floors");
             floorsNumber = Integer.parseInt(scanner.nextLine());
-        }while (!CheckUtils.checkFloorsNumber(floorsNumber));
+        } while (!CheckUtils.checkFloorsNumber(floorsNumber));
         Villa villa = new Villa(codeService, usableArea, rentalCosts, peopleMaximum, rentalType, roomStandard, poolArea, floorsNumber);
         villaIntegerMap.put(villa, 1);
+        villaRepository.add(villa, 1);
         System.out.println("Successfully added new.");
     }
 
     @Override
     public void displayMaintenance() {
-        boolean flag=true;
-        for (Integer v:villaIntegerMap.values()) {
-            if (v> 5) {
-                System.out.println("Technical team to check and maintain equipment: "+villaIntegerMap.values());
-                flag=false;
+        boolean flag = true;
+        for (Integer v : villaIntegerMap.values()) {
+            if (v > 5) {
+                System.out.println("Technical team to check and maintain equipment: " + villaIntegerMap.values());
+                flag = false;
             }
         }
     }

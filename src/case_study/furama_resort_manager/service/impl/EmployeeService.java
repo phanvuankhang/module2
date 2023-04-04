@@ -15,6 +15,7 @@ public class EmployeeService extends Employee implements IEmployeeService {
     static Scanner scanner = new Scanner(System.in);
     static List<Employee> employeeList = new ArrayList<>();
     private IEmployeeRepository employeeRepository=new EmployeeRepository();
+    static boolean flag=true;
 
 
     @Override
@@ -38,15 +39,41 @@ public class EmployeeService extends Employee implements IEmployeeService {
                 count++;
             }
         }
-        System.out.println("Enter your first and last name: ");
-        String name = scanner.nextLine();
+        String name;
+        do {
+            System.out.println("Enter your first and last name: ");
+            name = scanner.nextLine();
+        }while (!CheckUtils.checkName(name));
         String birthDay;
         do {
             System.out.println("Enter date of birth: ");
             birthDay = scanner.nextLine();
         }while (!CheckUtils.checkDate(birthDay));
         System.out.println("Enter gender: ");
-        String gender = scanner.nextLine();
+        String gender="";
+        do {
+            System.out.println("Gender:\n" +
+                    "1.\tMale\n" +
+                    "2.\tFemale\n" +
+                    "3.\tOther");
+            String choice=scanner.nextLine();
+            switch (choice){
+                case "1":
+                    gender="Male";
+                    flag=false;
+                    break;
+                case "2":
+                    gender="Female";
+                    flag=false;
+                    break;
+                case "3":
+                    gender="Other";
+                    flag=false;
+                    break;
+                default:
+                    System.out.println("Wrong format. Enter again!");
+            }
+        }while (flag);
         System.out.println("Enter ID number: ");
         String personId = scanner.nextLine();
         System.out.println("Enter phone number: ");
@@ -54,7 +81,6 @@ public class EmployeeService extends Employee implements IEmployeeService {
         System.out.println("Enter email: ");
         String email = scanner.nextLine();
         System.out.println("Enter level: ");
-        boolean flag=true;
         String level = "";
         do {
             System.out.println("Level:\n" +
@@ -62,21 +88,21 @@ public class EmployeeService extends Employee implements IEmployeeService {
                     "2.\tCollege\n" +
                     "3.\tUniversity\n" +
                     "4.\tPostgraduate");
-            int choice=Integer.parseInt(scanner.nextLine());
+            String choice=scanner.nextLine();
             switch (choice){
-                case 1:
+                case "1":
                     level="Intermediate";
                     flag=false;
                     break;
-                case 2:
+                case "2":
                     level="College";
                     flag=false;
                     break;
-                case 3:
+                case "3":
                     level="University";
                     flag=false;
                     break;
-                case 4:
+                case "4":
                     level="Postgraduate";
                     flag=false;
                     break;
@@ -85,7 +111,6 @@ public class EmployeeService extends Employee implements IEmployeeService {
             }
         }while (flag);
         System.out.println("Enter location: ");
-        boolean flag1=true;
         String location ="";
         do {
             System.out.println("Location:\n" +
@@ -95,40 +120,39 @@ public class EmployeeService extends Employee implements IEmployeeService {
                     "4.\tMonitor\n" +
                     "5.\tManagement\n" +
                     "6.\tDirector");
-            int choice=Integer.parseInt(scanner.nextLine());
+            String choice=scanner.nextLine();
             switch (choice){
-                case 1:
+                case "1":
                     location="Reception";
-                    flag1=false;
+                    flag=false;
                     break;
-                case 2:
+                case "2":
                     location="Serve";
-                    flag1=false;
+                    flag=false;
                     break;
-                case 3:
+                case "3":
                     location="Expert";
-                    flag1=false;
+                    flag=false;
                     break;
-                case 4:
+                case "4":
                     location="Monitor";
-                    flag1=false;
+                    flag=false;
                     break;
-                case 5:
+                case "5":
                     location="Management";
-                    flag1=false;
+                    flag=false;
                     break;
-                case 6:
+                case "6":
                     location="Director";
-                    flag1=false;
+                    flag=false;
                     break;
                 default:
                     System.out.println("Wrong format. Enter again!");
             }
-        }while (flag1);
+        }while (flag);
         System.out.println("Enter salary: ");
         float wage = Float.parseFloat(scanner.nextLine());
         Employee employee = new Employee(employeeId, name, birthDay, gender, personId, phoneNumber, email, level, location, wage);
-        employeeList.add(employee);
         employeeRepository.add(employee);
         System.out.println("Successfully added new.");
     }
@@ -162,41 +186,40 @@ public class EmployeeService extends Employee implements IEmployeeService {
                                 "8.\tLocation\n" +
                                 "9.\tSalary\n" +
                                 "10.\tExit");
-                        int choice = Integer.parseInt(scanner.nextLine());
+                        String choice = scanner.nextLine();
                         switch (choice) {
-                            case 1:
+                            case "1":
                                 System.out.println("Enter your first and last name: ");
                                 name = scanner.nextLine();
                                 employeeList.get(i).setName(name);
                                 break;
-                            case 2:
+                            case "2":
                                 System.out.println("Enter date of birth: ");
                                 birthDay = scanner.nextLine();
                                 employeeList.get(i).setBirthDay(birthDay);
                                 break;
-                            case 3:
+                            case "3":
                                 System.out.println("Enter gender: ");
                                 gender = scanner.nextLine();
                                 employeeList.get(i).setGender(gender);
                                 break;
-                            case 4:
+                            case "4":
                                 System.out.println("Enter ID number: ");
                                 personId = scanner.nextLine();
                                 employeeList.get(i).setPersonId(personId);
                                 break;
-                            case 5:
+                            case "5":
                                 System.out.println("Enter phone number: ");
                                 phoneNumber = scanner.nextLine();
                                 employeeList.get(i).setPhoneNumber(phoneNumber);
                                 break;
-                            case 6:
+                            case "6":
                                 System.out.println("Enter email: ");
                                 email = scanner.nextLine();
                                 employeeList.get(i).setEmail(email);
                                 break;
-                            case 7:
+                            case "7":
                                 System.out.println("Enter level: ");
-                                boolean flag1=true;
                                 level = "";
                                 do {
                                     System.out.println("Level:\n" +
@@ -204,32 +227,31 @@ public class EmployeeService extends Employee implements IEmployeeService {
                                             "2.\tCollege\n" +
                                             "3.\tUniversity\n" +
                                             "4.\tPostgraduate");
-                                    int choice1=Integer.parseInt(scanner.nextLine());
+                                    String choice1=scanner.nextLine();
                                     switch (choice1){
-                                        case 1:
+                                        case "1":
                                             level="Intermediate";
-                                            flag1=false;
+                                            flag=false;
                                             break;
-                                        case 2:
+                                        case "2":
                                             level="College";
-                                            flag1=false;
+                                            flag=false;
                                             break;
-                                        case 3:
+                                        case "3":
                                             level="University";
-                                            flag1=false;
+                                            flag=false;
                                             break;
-                                        case 4:
+                                        case "4":
                                             level="Postgraduate";
-                                            flag1=false;
+                                            flag=false;
                                             break;
                                         default:
                                             System.out.println("Wrong format. Enter again!");
                                     }
-                                }while (flag1);
+                                }while (flag);
                                 break;
-                            case 8:
+                            case "8":
                                 System.out.println("Enter location: ");
-                                boolean flag2=true;
                                 location ="";
                                 do {
                                     System.out.println("Location:\n" +
@@ -239,44 +261,44 @@ public class EmployeeService extends Employee implements IEmployeeService {
                                             "4.\tMonitor\n" +
                                             "5.\tManagement\n" +
                                             "6.\tDirector");
-                                    int choice2=Integer.parseInt(scanner.nextLine());
-                                    switch (choice2){
-                                        case 1:
+                                    String choice1=scanner.nextLine();
+                                    switch (choice1){
+                                        case "1":
                                             location="Reception";
-                                            flag2=false;
+                                            flag=false;
                                             break;
-                                        case 2:
+                                        case "2":
                                             location="Serve";
-                                            flag2=false;
+                                            flag=false;
                                             break;
-                                        case 3:
+                                        case "3":
                                             location="Expert";
-                                            flag2=false;
+                                            flag=false;
                                             break;
-                                        case 4:
+                                        case "4":
                                             location="Monitor";
-                                            flag2=false;
+                                            flag=false;
                                             break;
-                                        case 5:
+                                        case "5":
                                             location="Management";
-                                            flag2=false;
+                                            flag=false;
                                             break;
-                                        case 6:
+                                        case "6":
                                             location="Director";
-                                            flag2=false;
+                                            flag=false;
                                             break;
                                         default:
                                             System.out.println("Wrong format. Enter again!");
                                     }
-                                }while (flag2);
+                                }while (flag);
                                 employeeList.get(i).setLocation(location);
                                 break;
-                            case 9:
+                            case "9":
                                 System.out.println("Enter salary: ");
                                 wage = Float.parseFloat(scanner.nextLine());
                                 employeeList.get(i).setWage(wage);
                                 break;
-                            case 10:
+                            case "10":
                                 System.out.println("Exit");
                                 flag = false;
                                 break;
@@ -285,7 +307,6 @@ public class EmployeeService extends Employee implements IEmployeeService {
                         }
                     } while (flag);
                     Employee employee = new Employee(name, birthDay, gender, gender, personId, phoneNumber, email, level, location, wage);
-                    employeeList.add(employee);
                     employeeRepository.add(employee);
                     System.out.println("successful fix");
                 }

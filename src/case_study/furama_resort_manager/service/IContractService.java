@@ -1,7 +1,7 @@
 package case_study.furama_resort_manager.service;
 
 public interface IContractService extends IService{
-    public void create();
+void edit();
 
     @Override
     void display();

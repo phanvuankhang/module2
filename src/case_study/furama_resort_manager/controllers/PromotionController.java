@@ -11,15 +11,15 @@ public class PromotionController {
                     "1.\tDisplay list customers use service\n" +
                     "2.\tDisplay list customers get voucher\n" +
                     "3.\tReturn main menu\n");
-            int choice=Integer.parseInt(scanner.nextLine());
+            String choice=scanner.nextLine();
             switch (choice){
-                case 1:
+                case "1":
 
                     break;
-                case 2:
+                case "2":
 
                     break;
-                case 3:
+                case "3":
                     flag=false;
                     break;
                 default:
